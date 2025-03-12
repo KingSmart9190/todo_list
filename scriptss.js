@@ -22,6 +22,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const signupFields = document.getElementById("signup-fields");
     const authForm = document.getElementById("auth-form");
 
+    const express = require("express");
+const app = express();
+
+const PORT = process.env.PORT || 3000; // Default to 3000 if PORT is not set
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+
     // Toggle Between Login and Sign-Up
     toggleLink.addEventListener("click", (e) => {
         e.preventDefault();
