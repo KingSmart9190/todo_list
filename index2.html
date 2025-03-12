@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Todo</h1>
+            <button id="createReminderButton">Create Reminder</button>
+        </header>
+
+        <section class="todo-section">
+            <h2>Todo-list</h2>
+            <ul id="todoList">
+                <li>
+                    <span class="status-circle work"></span>
+                    <div class="task-info">
+                        <p class="task-title">Organize photo shoot</p>
+                        <p class="task-details">Today | Work | Hooli</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="status-circle grocery"></span>
+                    <div class="task-info">
+                        <p class="task-title">Buy milk</p>
+                        <p class="task-details">Today | Grocery</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="status-circle work"></span>
+                    <div class="task-info">
+                        <p class="task-title">Set up meeting w/ Globex</p>
+                        <p class="task-details">Today | Work</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="status-circle personal"></span>
+                    <div class="task-info">
+                        <p class="task-title">Renew passport</p>
+                        <p class="task-details">Tomorrow | Personal</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="status-circle work"></span>
+                    <div class="task-info">
+                        <p class="task-title">Checklist LA trip</p>
+                        <p class="task-details">Tomorrow | Work</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="completed-section">
+            <h2>Completed</h2>
+            <ul id="completedList">
+                <li>
+                    <span class="status-circle personal completed"></span>
+                    <div class="task-info">
+                        <p class="task-title">Book dinner with Luis</p>
+                        <p class="task-details">Today | Personal</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <a href="logout.php">logout</a>
+</body>
+<script src="scriptt.js"></script>
+</html>
