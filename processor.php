@@ -76,7 +76,7 @@ if (isset($_POST['action'])) {
 
             if (password_verify($password, $hashedPassword)) {
                 echo "Password verification successful.<br>";
-                header("Location: index2.html");
+                header("Location: main.html");
                 exit();
             } else {
                 echo "Error: Incorrect password.";
