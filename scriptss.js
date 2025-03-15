@@ -16,25 +16,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 10000);
 
     const toggleLink = document.getElementById("toggle-link");
+    const toggleAnchor = toggleLink.querySelector("a"); // Selects the <a> inside <p>
     const formTitle = document.getElementById("form-title");
     const formAction = document.getElementById("form-action");
     const loginFields = document.getElementById("login-fields");
     const signupFields = document.getElementById("signup-fields");
-    const authForm = document.getElementById("auth-form");
 
-    const express = require("express");
-const app = express();
-
-const PORT = process.env.PORT || 3000; // Default to 3000 if PORT is not set
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
-
-
-    // Toggle Between Login and Sign-Up
-    toggleLink.addEventListener("click", (e) => {
-        e.preventDefault();
-
+    function toggleForm() {
         if (formAction.value === "login") {
             // Switch to Sign-Up
             formAction.value = "register";
@@ -43,7 +31,10 @@ app.listen(PORT, () => {
             signupFields.style.display = "block";
             Array.from(signupFields.querySelectorAll("input")).forEach(input => input.disabled = false);
             Array.from(loginFields.querySelectorAll("input")).forEach(input => input.disabled = true);
-            toggleLink.innerHTML = 'Already have an account? <a href="#">Log In</a>';
+
+            // Update toggle link text
+            toggleLink.firstChild.textContent = "Already have an account? ";
+            toggleAnchor.textContent = "Log In";
         } else {
             // Switch to Login
             formAction.value = "login";
@@ -52,9 +43,20 @@ app.listen(PORT, () => {
             signupFields.style.display = "none";
             Array.from(loginFields.querySelectorAll("input")).forEach(input => input.disabled = false);
             Array.from(signupFields.querySelectorAll("input")).forEach(input => input.disabled = true);
-            toggleLink.innerHTML = 'Don’t have an account? <a href="#">Sign Up</a>';
+
+            // Update toggle link text
+            toggleLink.firstChild.textContent = "Don’t have an account? ";
+            toggleAnchor.textContent = "Sign Up";
         }
+    }
+
+    // Attach event listener directly to the <a> inside the <p>
+    toggleAnchor.addEventListener("click", (e) => {
+        e.preventDefault();
+        toggleForm();
     });
+
+
 
     // Password Strength Checker (Only for Sign-Up)
     const signupPasswordField = document.getElementById("signup-password");
