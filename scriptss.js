@@ -21,6 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const formAction = document.getElementById("form-action");
     const loginFields = document.getElementById("login-fields");
     const signupFields = document.getElementById("signup-fields");
+    const authForm = document.getElementById("auth-form");
+
 
     function toggleForm() {
         if (formAction.value === "login") {

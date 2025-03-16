@@ -6,10 +6,14 @@
     <title>Verify OTP</title>
 </head>
 <body>
-    <form id="verification-form">
+    <h1>Email Verification</h1>
+    <form id="verification-form" method="post" action="processor.php">
+        <input type="hidden" name="action" value="verify">
+        <label for="email">Email</label>
         <input type="email" name="email" placeholder="Email" required>
+        <label for="otp">OTP</label>
         <input type="text" name="otp" placeholder="Enter OTP" required>
         <button type="submit">Verify</button>
-    </form>    
+    </form>
 </body>
 </html>

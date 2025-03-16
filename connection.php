@@ -9,7 +9,7 @@ if ($conn->connect_error) {
     die('Could not connect to DB server on $dbhostname'
             . $conn->connect_error);
 }
-else {
-    echo 'Connected to the database';
+/*else {
+   // echo 'Connected to the database';
 }
-?>
+?>*/
